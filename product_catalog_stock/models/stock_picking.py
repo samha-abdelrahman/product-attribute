@@ -14,6 +14,7 @@ class StockPicking(models.Model):
         return {
             **super()._get_action_add_from_catalog_extra_context(),
             "order_id": self.id,
+            "location": self.location_id.id,
         }
 
     def _default_order_line_values(self, child_field=False):
